@@ -1,136 +1,136 @@
 # FishTracker Merge Tool
 
-> Script Python pour l'extraction, le traitement et la fusion des données exportées par le logiciel FishTracker (version 0.1).
+> Python script for extracting, processing, and merging the data exported by the FishTracker software (version 0.1).
 
-## 1. Métadonnées / Metadata
+---
 
-| Champ | Valeur |
-|-------|--------|
-| **Nom** | FishTracker Merge Tool |
-| **Version** | [À compléter : Version actuelle, ex: 1.0.0] |
-| **Date** | [À compléter : Date de dernière modification] |
-| **Auteurs / Développeurs** | [À compléter : Noms et affiliations des auteurs] |
-| **Contact** | [À compléter : Email de contact] |
-| **Laboratoire / Organisme responsable** | [À compléter : Nom de l'institut, ex: INRAE, CARRTEL] |
-| **Licence** | GNU General Public License v3.0 (GPL-3.0) |
-| **Site web** | [À compléter : URL du site du projet si applicable] |
-| **Code source** | [À compléter : URL du dépôt, ex: Gitlab INRAE] |
-| **Domaine scientifique** | [À compléter : Écologie, hydrobiologie, traitement de données, etc.] |
-| **Fonctionnalités clés** | Extraction des dates et heures depuis les noms de fichiers, fusion de multiples exports FishTracker, formatage de données |
+## 1. Metadata
+
+| Field | Value |
+|-------|-------|
+| **Name** | FishTracker Merge Tool |
+| **Version** | 1.0.0 |
+| **Date** | April 2025 |
+| **Authors / Developers** | Quentin Godeaux |
+| **Contact** | quentin.godeaux@inrae.fr |
+| **Laboratory / Responsible organisation** | INRAE — UMR CARRTEL (Centre Alpin de Recherche sur les Réseaux Trophiques et les Écosystèmes Limniques), Thonon-les-Bains, France |
+| **License** | GNU General Public License v3.0 (GPL-3.0) |
+| **Website** |  |
+| **Source code** |  |
+| **Scientific field** | Freshwater ecology, limnology, hydroacoustics, fish monitoring, scientific data processing |
+| **Key features** | Extraction of dates and times from file names, merging of multiple FishTracker exports, data formatting |
 | **Technologies** | Python 3.x, pandas |
-| **Mots-clés** | FishTracker, data processing, merge, python, pandas |
+| **Keywords** | FishTracker, acoustic camera, fish tracking, data processing, merge, Python, pandas |
 
-## 2. Contexte et historique / Context & History
+---
 
-### Historique
-- Matériel préparatoire : [À compléter]
-- Versions précédentes : Première version identifiée
-- Composants intégrés et dépendances : 
-  - `pandas` : Licence BSD (compatible avec GPL-3.0)
-- Feuille de route / Roadmap : [À compléter]
-- Logiciels équivalents : [À compléter]
+## 2. Context & History
 
-### Projet(s) lié(s)
-- [À compléter : Nom du projet lié, type de financement, etc.]
-- Cadre de développement : Traitement des exports (version 0.1) du logiciel FishTracker.
-- Contraintes de licence liées au financement : [À compléter]
+### History
+- Preliminary material: 
+- Previous versions: First identified version
+- Integrated components and dependencies:
+  - `pandas`: BSD license (compatible with GPL-3.0)
+- Roadmap: 
+- Equivalent software: 
 
-## 3. Objectifs / Objectives
+### Related project(s)
+-Reference publication:  Godeaux, Quentin, Hervé Rogissart, Clément Rautureau, François Martignac, Franck Cattanéo, et Jean Guillard. « Comparative evaluation of two automated fish counting software tools using acoustic camera data ». Ecological Informatics 97 (août 2026): 103904. https://doi.org/10.1016/j.ecoinf.2026.103904.
 
-### Objectifs scientifiques
-[À compléter : Décrire les objectifs de recherche, comme faciliter l'analyse comportementale des poissons en consolidant de multiples exports en une seule base de données analysable.]
+---
 
-### Objectifs d'utilisation et de diffusion
-- Durée de vie prévue : [À compléter]
-- Utilisation prévue : Production scientifique, analyse de données post-traitement.
-- Public cible : Chercheurs, ingénieurs et techniciens de l'équipe / laboratoire.
-- Objectifs de diffusion : [À compléter : Outil interne, dépôt public, etc.]
-- Communauté de collaboration souhaitée : [À compléter : Oui / Non]
-- Préservation : [À compléter : Stratégie d'archivage]
+## 3. Objectives
 
-## 4. Caractéristiques techniques / Technical Features
+### Scientific objectives
+Facilitate the analysis of fish-monitoring data by consolidating multiple FishTracker track exports into a single, analysable dataset. The tool automates the extraction of acquisition dates and times from file names and standardises the output, so that downstream behavioural, abundance, or phenology analyses can be performed on a unified database rather than on scattered individual exports.
 
-- Technologies utilisées : Python 3.x
-- Dépendances : `pandas`, bibliothèques standard (`os`)
-- Réutilisation de briques existantes : [À compléter]
-- Contraintes techniques : Compatibilité stricte avec le format de nommage et de données du logiciel FishTracker v0.1 (fichiers terminant par `_tracks.txt`).
-- Normes et standards : Fichiers en sortie au format CSV délimité par des points-virgules (`;`).
+### Usage and dissemination objectives
+- Expected lifetime: 
+- Intended use: Scientific production, post-processing data analysis.
+- Target audience: Researchers, engineers, and technicians.
+- Dissemination objectives: Promote open science; provide a research‑data deposit ensuring transparency.
+- Desired collaboration community: Yes.
+- Preservation: 
 
-## 5. Installation et utilisation / Installation & Usage
+---
 
-### Prérequis
-- Environnement Python 3.x
-- Bibliothèque `pandas`
+## 4. Technical Features
+
+- Technologies used: Python 3.x
+- Dependencies: `pandas`, standard library (`os`)
+- Reuse of existing building blocks: 
+- Technical constraints: Strict compatibility with the naming and data format of FishTracker v0.1 (files ending in `_tracks.txt`).
+- Standards and norms: Output files in CSV format, semicolon-delimited (`;`).
+
+---
+
+## 5. Installation & Usage
+
+### Prerequisites
+- Python 3.x environment
+- `pandas` library
 
 ### Installation
-Cloner ou télécharger le dépôt, puis installer les dépendances (idéalement dans un environnement virtuel) :
+Clone or download the repository, then install the dependencies (ideally in a virtual environment):
 ```bash
 pip install pandas
 ```
 
-### Utilisation rapide
-1. Placer les fichiers textes à traiter (terminant par `_tracks.txt`) dans un dossier.
-2. Éditer le fichier `FishTracker-Merge-Tool.py` et modifier la variable `source_folder` pour indiquer le chemin du dossier :
+### Quick start
+1. Place the text files to be processed (ending in `_tracks.txt`) in a folder.
+2. Edit the `FishTracker-Merge-Tool.py` file and set the `source_folder` variable to the folder path:
    ```python
    source_folder = r"/path/to/your/folder"
    ```
-3. Exécuter le script :
+3. Run the script:
    ```bash
    python FishTracker-Merge-Tool.py
    ```
-4. Le fichier fusionné `CSOT_merged.txt` sera généré dans le même dossier.
-
-## 6. Organisation de l'équipe et du développement / Team & Development Organisation
-
-### Gouvernance
-- Organisme responsable : [À compléter]
-- Accord de consortium : [À compléter si applicable]
-
-### Équipe
-- Membres : [À compléter : Liste des membres avec rôles et statuts]
-
-### Organisation du développement
-- Méthodes et outils : [À compléter : Git, etc.]
-- Procédures qualité : Le script intègre un traitement par lots robuste ignorant les fichiers non compatibles.
-- Sécurité : [À compléter]
-- Gestion des versions, bugs et validation : [À compléter]
-- Documentation : Mise à jour manuelle du README.
-- Règles de contribution externe : [À compléter]
-
-## 7. Diffusion et citation / Distribution & Citation
-
-### Dépôt de référence
-- URL du dépôt principal : [À compléter]
-- Identifiant pérenne (DOI) : [À compléter]
-
-### Citation
-[À compléter : Proposer une formule de citation type, ex: Auteurs (Année). FishTracker Merge Tool. Version X.X. URL]
-
-### Publications et utilisations externes
-- [À compléter]
-
-### Support et communication
-- Support utilisateur : [À compléter : email, etc.]
-- Communications : [À compléter]
-- Référencement : [À compléter]
-
-## 8. Gestion du Plan de Gestion de Logiciel / SMP Management
-
-- Responsable du SMP : [À compléter]
-- Fréquence de mise à jour : [À compléter]
-- Événements déclencheurs : [À compléter]
-- Diffusion du SMP : [À compléter]
-- Lien avec le DMP (Data Management Plan) : [À compléter]
-
-## 9. Licences et propriété intellectuelle / Legal & IP
-
-- Auteurs et détenteurs des droits : [À compléter]
-- Licence du code : **GNU General Public License v3.0 (GPL-3.0)**
-- Licence de la documentation et du site : [À compléter, ex: CC-BY-4.0]
-- Date d'ouverture prévue (si code actuellement fermé) : [À compléter]
-- Gestion des contributions externes : [À compléter]
-- Confidentialité / données sensibles : Non applicable pour le code source (attention aux données d'entrée).
+4. The merged file `CSOT_merged.txt` will be generated in the same folder.
 
 ---
 
-*Ce README est structuré selon le Modèle de Plan de Gestion de Logiciel de la Recherche – Projet PRESOFT V3.2 (CNRS/IN2P3, 2018).*
+## 6. Team & Development Organisation
+
+### Governance
+- Responsible organisation: INRAE/USMB — UMR CARRTEL
+
+### Team
+- Members: Quentin Godeaux, Hervé Rogissart, Clément Rautureau, François Martignac, Franck Cattanéo, Jean Guillard.
+
+### Development organisation
+- Methods and tools: Python 3.x developed in VS Code.
+- Quality procedures: The script includes robust batch processing that skips incompatible files.
+- Version, bug, and validation management: Git / GitHub (local).
+- Documentation: Manual update of the README.
+
+---
+
+## 7. Distribution & Citation
+
+### Reference repository
+- Main repository URL: https://github.com/Github-Carrtel/FishTracker_Merge_Tool/
+- Persistent identifier (DOI): https://doi.org/10.1016/j.ecoinf.2026.103904
+
+### Citation
+Godeaux, Quentin, Hervé Rogissart, Clément Rautureau, François Martignac, Franck Cattanéo, et Jean Guillard.(2026).« Comparative evaluation of two automated fish counting software tools using acoustic camera data ». Ecological Informatics 97: 103904. https://doi.org/10.1016/j.ecoinf.2026.103904.
+
+---
+
+## 8. Software Management Plan (SMP)
+
+- SMP manager: 
+- Update frequency: When major data‑set updates occur. 
+- Link with the DMP (Data Management Plan): 
+
+---
+
+## 9. Legal & IP
+
+- **Authors / Rights holders**: Quentin Godeaux, Hervé Rogissart, Clément Rautureau, François Martignac, Franck Cattanéo, Jean Guillard.  
+- Code license: **GNU General Public License v3.0 (GPL-3.0)** 
+- **Planned opening date**: Immediately upon publication.   [1]
+
+---
+
+*This README is structured according to the Research Software Management Plan Template, PRESOFT Project V3.2 (CNRS/IN2P3, 2018).*
