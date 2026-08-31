@@ -1,9 +1,9 @@
 import os
 import pandas as pd
 
-# 1. Define the folder containing the text files
-source_folder = r"/path/to/your/folder"
-output_file = os.path.join(source_folder, "CSOT_merged.txt")  
+# 1. The folder containing the text files is the folder where this script is located
+source_folder = os.path.dirname(os.path.abspath(__file__))
+output_file = os.path.join(source_folder, "CSOT_merged.txt")
 
 # 2. Initialize a list to store the DataFrames
 all_data = []
