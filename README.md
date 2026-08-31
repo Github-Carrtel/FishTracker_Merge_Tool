@@ -77,16 +77,13 @@ pip install pandas
 ```
 
 ### Quick start
-1. Place the text files to be processed (ending in `_tracks.txt`) in a folder.
-2. Edit the `FishTracker-Merge-Tool.py` file and set the `source_folder` variable to the folder path:
-   ```python
-   source_folder = r"/path/to/your/folder"
-   ```
-3. Run the script:
+1. Place the `FishTracker-Merge-Tool.py` script in the same folder as the text files to be processed (the folder containing the `_tracks.txt` files).
+2. Run the script:
    ```bash
    python FishTracker-Merge-Tool.py
    ```
-4. The merged file `CSOT_merged.txt` will be generated in the same folder.
+   The script automatically uses its own folder as the working directory, so no path needs to be set.
+3. The merged file `CSOT_merged.txt` will be generated in the same folder.
 
 ---
 
