@@ -19,7 +19,7 @@
 | **Source code** |  |
 | **Scientific field** | Freshwater ecology, limnology, hydroacoustics, fish monitoring, scientific data processing |
 | **Key features** | Extraction of dates and times from file names, merging of multiple FishTracker exports, data formatting |
-| **Technologies** | Python 3.x, pandas |
+| **Technologies** | Python 3.x (standard library only), PyInstaller |
 | **Keywords** | FishTracker, acoustic camera, fish tracking, data processing, merge, Python, pandas |
 
 ---
@@ -30,7 +30,7 @@
 - Preliminary material: 
 - Previous versions: First identified version
 - Integrated components and dependencies:
-  - `pandas`: BSD license (compatible with GPL-3.0)
+  - Python standard library only (`os`, `sys`, `csv`) — no third-party dependency
 - Roadmap: 
 - Equivalent software: 
 
@@ -57,7 +57,7 @@ Facilitate the analysis of fish-monitoring data by consolidating multiple FishTr
 ## 4. Technical Features
 
 - Technologies used: Python 3.x
-- Dependencies: `pandas`, standard library (`os`)
+- Dependencies: none — Python standard library only (`os`, `sys`, `csv`); distributed as a standalone Windows executable built with PyInstaller
 - Reuse of existing building blocks: 
 - Technical constraints: Strict compatibility with the naming and data format of FishTracker v0.1 (files ending in `_tracks.txt`).
 - Standards and norms: Output files in CSV format, semicolon-delimited (`;`).
@@ -66,24 +66,32 @@ Facilitate the analysis of fish-monitoring data by consolidating multiple FishTr
 
 ## 5. Installation & Usage
 
-### Prerequisites
-- Python 3.x environment
-- `pandas` library
+There are two ways to use the tool. Both automatically use the folder where the program is located, so no path ever needs to be edited.
 
-### Installation
-Clone or download the repository, then install the dependencies (ideally in a virtual environment):
-```bash
-pip install pandas
-```
+### Option A — Standalone executable (recommended, no installation)
+A ready-to-use Windows executable (`FishTracker-Merge-Tool.exe`) is provided. It bundles everything needed: **no Python and no libraries have to be installed**.
 
-### Quick start
-1. Place the `FishTracker-Merge-Tool.py` script in the same folder as the text files to be processed (the folder containing the `_tracks.txt` files).
+1. Place `FishTracker-Merge-Tool.exe` in the same folder as the text files to be processed (the folder containing the `_tracks.txt` files).
+2. Double-click the executable.
+3. The merged file `CSOT_merged.txt` is generated in the same folder.
+
+### Option B — Run the Python script
+Requires only **Python 3.x** (no external library — the script uses the standard library only).
+
+1. Place `FishTracker-Merge-Tool.py` in the same folder as the `_tracks.txt` files.
 2. Run the script:
    ```bash
    python FishTracker-Merge-Tool.py
    ```
-   The script automatically uses its own folder as the working directory, so no path needs to be set.
-3. The merged file `CSOT_merged.txt` will be generated in the same folder.
+3. The merged file `CSOT_merged.txt` is generated in the same folder.
+
+### Rebuilding the executable (optional, for developers)
+The executable can be regenerated from the script with [PyInstaller](https://pyinstaller.org/):
+```bash
+pip install pyinstaller
+pyinstaller --onefile --console --name "FishTracker-Merge-Tool" FishTracker-Merge-Tool.py
+```
+The resulting `FishTracker-Merge-Tool.exe` is created in the `dist/` folder.
 
 ---
 
